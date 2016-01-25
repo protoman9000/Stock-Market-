@@ -10,7 +10,16 @@ namespace ConsoleApplication25
     {
         static void Main(string[] args)
         {
+            string price;
             Console.WriteLine("Starting Stok Market Program");
+            List<int> stockList = new List<int>();
+
+            System.IO.StreamReader file = new System.IO.StreamReader("C:\\Users\\Aziz\\Desktop\\ST.txt");
+            while((price = file.ReadLine()) != null)
+            {
+                int x = Convert.ToInt16(price);
+                stockList.Add(x);
+            }
 
         }
     }
