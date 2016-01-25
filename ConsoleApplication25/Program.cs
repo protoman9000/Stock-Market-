@@ -11,15 +11,19 @@ namespace ConsoleApplication25
         static void Main(string[] args)
         {
             string price;
+            double x = 0;
             Console.WriteLine("Starting Stok Market Program");
-            List<int> stockList = new List<int>();
+            List<double> stockList = new List<double>();
 
             System.IO.StreamReader file = new System.IO.StreamReader("C:\\Users\\Aziz\\Desktop\\ST.txt");
             while((price = file.ReadLine()) != null)
             {
-                int x = Convert.ToInt16(price);
+                x = Convert.ToDouble(price);
                 stockList.Add(x);
             }
+            Console.WriteLine("Ending phase");
+
+            Console.ReadKey();
 
         }
     }
