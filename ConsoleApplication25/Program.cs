@@ -14,6 +14,7 @@ namespace ConsoleApplication25
             double x = 0;
             double ans1 = 0;
             double ans2 = 0;
+            double check = 0;
 
             string low;
             string high;
@@ -32,17 +33,18 @@ namespace ConsoleApplication25
                 count++;
             }
 
-            for (int k = 0; k < count; k++)
+            for (int k = 0; k < count - 1; k++)
             {
                 j = k + 1;
-                double result = stockList[k] - stockList[j];
-                if (result > 0 && ans1 == null)
+                double result = stockList[j] - stockList[k];
+                if (result > 0 && ans1 == 0.0)
                 {
                     ans1 = stockList[k];
                 }
-                if (result > 0)
+                if (result > 0 && result > check)
                 {
-                    ans2 = stockList[k];
+                    check = result;
+                    ans2 = stockList[j];
                 }
             }
 
